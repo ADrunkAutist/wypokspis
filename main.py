@@ -27,7 +27,7 @@ data.boxplot(by = 'tag', column=['cap', 'nat', 'aut', 'trad'], layout=(1,4), gri
 data.boxplot(by = 'sex', column=['cap', 'nat', 'aut', 'trad'], layout=(1,4), grid=True)
 
 data[data.ideology.isin(popul_ideo)].groupby('ideology').boxplot(layout=(2,7), column=['cap', 'nat', 'aut', 'trad'])
-plt.ylim(0,1)
+data[data.ideology.isin(popul_ideo)].boxplot(by='ideology',layout=(2,2), column=['cap', 'nat', 'aut', 'trad'], rot=75)
 
 ax1 = data.plot.scatter(x='cap', y='aut', color = colors, edgecolor = 'black')
 ax1.axes.fill_between((0,0.5),0.5,1, color = '#f4baba', zorder = -100)
